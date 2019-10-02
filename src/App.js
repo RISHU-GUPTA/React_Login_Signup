@@ -15,7 +15,10 @@ class App extends React.Component {
     arr2:this.arr2 };
   }
 takeInputs(event){
+  console.log("event is",event);
+  console.log("targeted event",event.target);
 this.inputs[event.target.id]=event.target.value;
+  console.log("inputs is",this.inputs[event.target.id]);
 this.setState({...this.state,inputs:this.inputs})
 
 //this.setState({...this.state,inputs:this.inputs})
@@ -35,7 +38,9 @@ log(event){
 current(){
 this.flag=!this.flag;
 for(let key of this.arr){
+  console.log("key is",key);
 for(let value of this.arr2){
+  console.log("value is",value);
   if(key.name===value.logname && key.pass===value.logpass){
     this.setState({...this.state,flag:this.flag});
   }
